@@ -1,0 +1,153 @@
+/* ===== MAIN CONTAINER ===== */
+.about_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 80px 40px;
+  text-align: left;
+}
+
+/* ===== INNER CONTAINER ===== */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ===== VIDEO SECTION ===== */
+.about_video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease-in-out;
+}
+
+.about_video.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about_video video {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.about_video video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== TEXT SECTION ===== */
+.about_pro {
+  flex: 1;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s ease-in-out;
+}
+
+.about_pro.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about_pro h3 {
+  color: #ff9800;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.about_pro h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.about_pro p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about_video video {
+    width: 80%;
+    max-width: 420px;
+  }
+
+  .about_pro {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .about_pro h1 {
+    font-size: 28px;
+  }
+
+  .about_pro p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_main {
+    padding: 60px 25px;
+  }
+
+  .about_video video {
+    width: 85%;
+    max-width: 360px;
+  }
+
+  .about_pro h1 {
+    font-size: 25px;
+  }
+
+  .about_pro p {
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about_main {
+    padding: 50px 20px;
+  }
+
+  .about_video video {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .about_pro h1 {
+    font-size: 22px;
+  }
+
+  .about_pro p {
+    font-size: 13.5px;
+  }
+}
+

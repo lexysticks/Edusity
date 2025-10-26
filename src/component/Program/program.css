@@ -1,0 +1,163 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.program_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: whitesmoke;
+  padding: 30px;
+  padding-bottom: 100px;
+}
+
+.program {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.our h4 {
+  color: #ff9800;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.our h1 {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  color: #1a1a1a;
+}
+
+/* ===== PROGRAM CARDS ===== */
+.program_card {
+  margin-top: 50px;
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.program_card .card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 350px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.program_card .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.program_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .program_card .card {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .program_card {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .program_card .card {
+    width: 90%;
+    height: 250px;
+  }
+
+  .our h1 {
+    font-size: 2rem;
+  }
+
+  .program_main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .program_card .card {
+    width: 100%;
+    height: 220px;
+  }
+
+  .our h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animations when visible */
+.slide-in-left {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease forwards;
+}
+
+.slide-in-up {
+  animation: slideInUp 1s ease forwards;
+}
